@@ -32,6 +32,12 @@
 
 		 GeLi geLi = new KeKe("keke");
 
+
+
+		 扫包是：扫这个包下面，只要加了这个注解的 类全部找出来，
+		<bean id="liuDeHua" 这种是找 xxxx.xml 文件的。
+
+        classpath 都到 tomcat 的 classes 这个文件夹里面去。
     -->
 
 
