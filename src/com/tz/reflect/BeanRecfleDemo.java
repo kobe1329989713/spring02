@@ -26,7 +26,7 @@ public class BeanRecfleDemo {
             //创建keke对象
             ClassLoader kekeClassLoader = Thread.currentThread().getContextClassLoader();
             Class kclz = liudehuaClassLoader.loadClass("com.tz.ioc.core.KeKe");
-            //解析构造函数
+            //解析构造函数，这也是构造注入。
             Constructor[] kconstructors = kclz.getDeclaredConstructors();
             com.tz.ioc.core.KeKe keke = (com.tz.ioc.core.KeKe) kconstructors[1].newInstance("keke");
 
@@ -36,16 +36,21 @@ public class BeanRecfleDemo {
             Class jclz = jubenClassLoader.loadClass("com.tz.ioc.core.MoGongMovie");
             MoGongMovie moGongMovie = (MoGongMovie) jclz.newInstance();
 
-
+            // 这个就是 setXxx() 注入原理。
             Method method = jclz.getDeclaredMethod("setGeLi", GeLi.class);
             method.invoke(moGongMovie, keke);
 
 
             moGongMovie.startMovie();
 
+            // 以上这些 Spring 把上面这些 解析出来后，是放在 一个 map 里面的。
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
+
+
 }
