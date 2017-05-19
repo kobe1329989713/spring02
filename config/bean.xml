@@ -9,6 +9,64 @@
   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 
- 	
- 	
+ 	<!--你在这里面配置的哪些，就是哪个导演。装配过程 -->
+
+    <!--
+
+        bean:节点:
+		id:唯一
+		class:装配需要的类，必须要有包名.类名
+
+		//ioc setter注入
+		<property name="属性的名称" value="属性的值"/> 普通变量的方式
+		<property name="属性的名称" ref="beanId"/> 对象的方式
+		前提：必须在类中生成setter方法即可，getter不需要.
+
+		//ioc 构造函数注入
+		<constructor-arg value="刘德华"></constructor-arg>
+		构造函数多个参数时，注：index 0 1 2 3...
+		<constructor-arg index="0" value="刘德华"/>
+		//ioc注解注入 @autowire
+		//ioc接口注入
+		接口注入，构造函数注入，setter注入也好都在干吗:赋值
+
+		 GeLi geLi = new KeKe("keke");
+
+    -->
+
+
+     <!--选择角色，一 -->
+    <bean id="liuDeHua" class="com.tz.ioc.core.LiuDeHua">
+        <!--构造赋值。-->
+        <constructor-arg index="0" value="刘德华"/>
+    </bean>
+    <!--角色二-->
+    <bean id="keke" class="com.tz.ioc.core.KeKe">
+        <constructor-arg index="0" value="keke"/>
+    </bean>
+
+    <!--剧本-->
+    <bean id="movie" class="com.tz.ioc.core.MoGongMovie">
+        <property name="geLi" ref="liuDeHua"/>
+    </bean>
+    <!--然后测试。o_o   -->
+
+    <!--
+        1、配置好。
+        2、用时，加载（语法是否正确）。
+        3、解析。
+        4、在通过反射创建对象，调用方法，赋值，存储在Spring容器里面
+        5、使用。
+        它就不用 new 了。
+
+        它里面是一个 map key value
+
+        加载资源文件有：
+        1、ClassPathReSource 针对于当前项目的源文件夹的
+        2、FileSystemResource 针对于 系统磁盘的。
+        3、ServletContextResource 针对于容器、web.xml 这个不用你管的。
+    -->
+
+
+
 </beans>

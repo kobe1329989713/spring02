@@ -18,6 +18,7 @@ package com.tz.ioc;
 public class MoGongMovie {
 
 
+    private LiuDeHua geli;
 
     /**
      * 哪个回答道,（城上将军就问：来者何人）
@@ -47,5 +48,13 @@ public class MoGongMovie {
     public static void main(String[] args) {
         MoGongMovie moGongMovie = new MoGongMovie();
         //moGongMovie.cityGateAsk();
+    }
+
+    public void setGeli(LiuDeHua geli) {
+        this.geli = geli;
+    }
+
+    public LiuDeHua getGeli() {
+        return geli;
     }
 }
