@@ -8,6 +8,18 @@
   http://www.springframework.org/schema/context   
   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+    <!--扫包
+            扫了包，就不用像下面哪种配置 ，不需要加 bean 节点了。
+    -->
+    <context:component-scan base-package="com.tz.ioc02"/>
+
+
+
+
+
+
+
+
 
  	<!--你在这里面配置的哪些，就是哪个导演。装配过程 -->
 

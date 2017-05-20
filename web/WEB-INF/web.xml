@@ -7,21 +7,37 @@
     <display-name>spring02</display-name>
 
 
+    <!--注册 spring容器，注：这狠重要。
+        大小写必须要一模一样。
+    -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:bean*.xml</param-value>
+        <!-- 	<param-value>/WEB-INF/classes/bean.xml</param-value> -->
+    </context-param>
+
+    <!-- web容器的监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!--
+        像 这里面的这些东西，配置好了，它都是放置到一个类里面的，就是给一个类 赋值一样。
+        其它 配置文件也是这个原理。
+
+        启动 tomcat 就需要加载的，就可以定义在这里面来。
+        因为一启动 tomcat 就需要加载 Spring容器所以就需要定义到这里面来。
 
 
-
+        就是因为这里面有一个 监听器，它在监听 application 应用上下文对象，只有你的值
+        发生变化了，它马上就监听到了，就开始执行。
+    -->
 
 
 
 
 
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.html</welcome-file>
-        <welcome-file>default.htm</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
 
 

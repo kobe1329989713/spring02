@@ -1,6 +1,7 @@
 package com.tz.ioc02;
 
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -42,6 +43,9 @@ public class ResourceDemo {
         System.out.println(resource.getDescription());
         // 获取配置文件的路径。注：是找到的 class 路径 ，不是磁盘路径，因为它的前缀 是 classpath
         System.out.println(resource.getFile().getAbsolutePath());
+
+
+        //Bean 工厂。
 
     }
 }
