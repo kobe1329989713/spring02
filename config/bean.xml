@@ -8,6 +8,12 @@
   http://www.springframework.org/schema/context   
   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+    <!--找到类，创建对象，赋值，使用。-->
+
+
+
+
+
     <!--扫包
             扫了包，就不用像下面哪种配置 ，不需要加 bean 节点了。
     -->
